@@ -386,7 +386,7 @@ public class SpCombatClient implements ClientModInitializer {
         if (rot != 0) {
             Vec3d aimAt = t.getBoundingBox().getCenter();
             if (m.bool("Predict")) {                          // hedefin hareket yonune 2 tick onden bak
-                aimAt = aimAt.add((t.getX() - t.prevX) * 2.0, 0, (t.getZ() - t.prevZ) * 2.0);
+              aimAt = aimAt.add((t.getX() - t.lastX) * 2.0, 0, (t.getZ() - t.lastZ) * 2.0);
             }
             float[] a = angles(p, aimAt);
             float dYaw = MathHelper.wrapDegrees(a[0] - p.getYaw());
