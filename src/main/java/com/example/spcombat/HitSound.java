@@ -29,3 +29,8 @@ public final class HitSound {
                     // sadece bize calar (oyuncunun kendi sesi)
                     mc.player.playSound(SOUNDS[m.index("Sound")], volume, pitch);
                 }
+            }
+            return ActionResult.PASS;
+        });
+    }
+}
