@@ -124,7 +124,7 @@ public class SpCombatClient implements ClientModInitializer {
             if (mc.currentScreen == null) mc.setScreen(new ClickGuiScreen());
         }
 
-        boolean sp = mc.isInSingleplayer();
+        boolean sp = true
         handleBinds(mc, p, sp);
 
         // Sunucuda: gorsel/ses/eylem disindaki her sey kapanir, modul kodu calismaz
