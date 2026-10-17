@@ -2,7 +2,6 @@ package com.example.spcombat;
 
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -27,11 +26,6 @@ public final class HitSound {
                     Module m = Modules.CLIENTSOUND;
                     float volume = (float) (m.num("Volume %") / 100.0);
                     float pitch = (float) (m.num("Pitch %") / 100.0);
-                    mc.getSoundManager().play(
-                            PositionedSoundInstance.master(SOUNDS[m.index("Sound")], pitch, volume));
+                    // sadece bize calar (oyuncunun kendi sesi)
+                    mc.player.playSound(SOUNDS[m.index("Sound")], volume, pitch);
                 }
-            }
-            return ActionResult.PASS;
-        });
-    }
-}
